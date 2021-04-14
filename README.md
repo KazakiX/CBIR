@@ -10,8 +10,15 @@
 ##  CBIR系统构建
 ### 基于颜色特征识别
 在本文构建的CBIR系统中，关于颜色特征的处理选用了RGB空间的直方图作为特征。提取方法使用的python opencv库中的cv2.calcHist()函数。然后使用cv2.normalize()对直方图进行均衡化，提高图像的对比度，以达到图像增强的效果。将提取到的RGB颜色直方图保存在colorhist.csv文件中。在需要时进行读取。
+
+<img src="https://user-images.githubusercontent.com/42568327/114646505-efe79780-9d0d-11eb-8098-89a0e1b48fc7.png" width = "400" heitght="300" alt="颜色识别展示" align=center />
+
 ### 基于纹理特征识别
 在本CBIR系统中，对于提取图像纹理特征的方法，采用的是灰度共生矩阵的特征方法。将特征值存放在图像特征数据库中。数据保存于glcm.csv文件中。
+
+<img src="https://user-images.githubusercontent.com/42568327/114646515-f4ac4b80-9d0d-11eb-815e-03f4e6912ff0.png" width = "400" heitght="300" alt="颜色识别展示" align=center />
+
 ### 基于形状特征识别
 作为一组关于形状的统计值，矩不变量的表示形式有多种，如 Hu 矩，具有对图像的旋转、平移和尺度变化的不变性。本CBIR系统的基本思想就是用图像的 Hu 不变矩 u1～u7 和离心率 e 作为图像的形状特征索引，使用适当的相似性距离定义，计算出两幅图像的相似性距离。当距离足够小时，就认为两幅图像是相似的。通过对hu_moments矩阵的一维化，将其转化成list，将e离心率加入，将结果矩阵保存在Hu.csv中。
 
+<img src="https://user-images.githubusercontent.com/42568327/114646520-f6760f00-9d0d-11eb-9ec2-941095e90557.png" width = "400" heitght="300" alt="颜色识别展示" align=center />
